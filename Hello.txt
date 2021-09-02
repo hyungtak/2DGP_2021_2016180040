@@ -1,3 +1,4 @@
-//이름: 주형탁
+#이름: 주형탁
+#학번: 
 print('Hello, World')
 cout << "Hello, Python!" << endl;
