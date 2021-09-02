@@ -1,2 +1,3 @@
+//이름: 주형탁
 print('Hello, World')
 cout << "Hello, Python!" << endl;
