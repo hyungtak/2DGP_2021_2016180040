@@ -1,4 +1,4 @@
 #이름: 주형탁
-#학번: 
+#학번: 2016180040
 print('Hello, World')
 cout << "Hello, Python!" << endl;
