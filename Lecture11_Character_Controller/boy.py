@@ -73,7 +73,7 @@ class RunState:
 
 class DashState:
     def enter(boy, event):
-        boy.timer = 500
+        boy.timer = 50
 
     def exit(boy, event):
         pass
@@ -117,7 +117,7 @@ IdleState: {RIGHT_UP:RunState, LEFT_UP: RunState,
             SHIFT_UP: IdleState},
 RunState:   {RIGHT_UP:IdleState, LEFT_UP: IdleState,
             RIGHT_DOWN:IdleState, LEFT_DOWN:IdleState,
-            SHIFT_DOWN: DashState, SHIFT_UP: IdleState},
+            SHIFT_DOWN: DashState, SHIFT_UP: RunState},
 SleepState: {LEFT_DOWN:RunState, RIGHT_DOWN: RunState,
             LEFT_UP:RunState, RIGHT_UP:RunState},
 DashState: {RIGHT_UP:RunState, LEFT_UP: RunState,
