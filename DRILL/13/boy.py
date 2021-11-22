@@ -136,6 +136,7 @@ class Boy:
         self.cur_state.enter(self, None)
 
     def get_bb(self):
+        # fill here
         return self.x - 50, self.y - 50, self.x + 50, self.y + 50
 
 
@@ -148,6 +149,7 @@ class Boy:
         self.event_que.insert(0, event)
 
     def update(self):
+
         self.cur_state.do(self)
         if len(self.event_que) > 0:
             event = self.event_que.pop()
@@ -155,11 +157,12 @@ class Boy:
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
 
+
     def draw(self):
         self.cur_state.draw(self)
         self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' % get_time(), (255, 255, 0))
         draw_rectangle(*self.get_bb())
-
+        debug_print('Velocity :' + str(self.velocity) + '  Dir:' + str(self.dir) + ' Frame Time:' + str(game_framework.frame_time))
 
     def handle_event(self, event):
         if (event.type, event.key) in key_event_table:
